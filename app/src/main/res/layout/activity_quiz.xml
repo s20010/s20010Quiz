@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="aaa"
+        android:text="回答１"
         app:layout_constraintTop_toBottomOf="@+id/Question1"
         tools:layout_editor_absoluteX="162dp" />
 
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="bbb"
+        android:text="回答２"
         app:layout_constraintTop_toBottomOf="@+id/Btn0"
         tools:layout_editor_absoluteX="166dp" />
 
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="ccc"
+        android:text="回答３"
         app:layout_constraintTop_toBottomOf="@+id/Btn1"
         tools:layout_editor_absoluteX="166dp" />
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="ddd"
+        android:text="回答４"
         app:layout_constraintTop_toBottomOf="@+id/Btn2"
         tools:layout_editor_absoluteX="147dp" />
 
