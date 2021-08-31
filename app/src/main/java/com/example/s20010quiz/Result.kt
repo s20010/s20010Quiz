@@ -8,7 +8,7 @@ import android.view.View
 import com.example.s20010quiz.databinding.ActivityQuizBinding
 import java.util.zip.Inflater
 
-class ResultActivity : AppCompatActivity() {
+class Result : AppCompatActivity() {
     private lateinit var binding : ActivityResultBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

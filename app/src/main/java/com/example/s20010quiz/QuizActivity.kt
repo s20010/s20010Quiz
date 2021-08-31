@@ -1,16 +1,11 @@
 package com.example.s20010quiz
 
-import android.app.AlertDialog
-import android.app.AppComponentFactory
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.s20010quiz.databinding.ActivityQuizBinding
 import android.os.CountDownTimer
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import kotlin.system.measureTimeMillis
 
@@ -21,15 +16,12 @@ class QuizActivity : AppCompatActivity() {
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val start = System.currentTimeMillis();
-        println(start)
 
 
         //自身のインテントを受け取る
         var index = intent.getIntExtra("INDEX", 1)
         var score = intent.getIntExtra("SCORE", 0)
         var time = intent.getLongExtra("TIME",0)
-
-        //タイマーを作る
 
         //CSVを格納
         val assetManager = applicationContext.assets.open("s20010_quiz.csv").bufferedReader()
@@ -108,7 +100,6 @@ class QuizActivity : AppCompatActivity() {
         }
         println(times)
 
-        val handler = Handler(Looper.getMainLooper())
         binding.Next.setOnClickListener {
 
         //選ばれているボタンのテキストを取得
@@ -136,7 +127,7 @@ class QuizActivity : AppCompatActivity() {
                 val end = System.currentTimeMillis()
                 //時間の計算
                 time += (end - start) / 1000
-                onChange(it,index, score, times)
+                resultChange(it,score, time)
             }
             //10以下の場合は次の問題へ
             else {
@@ -144,7 +135,7 @@ class QuizActivity : AppCompatActivity() {
                 val end = System.currentTimeMillis()
                 //時間の計算
                 time += (end - start) / 1000
-                onChange(it, index, score,time)
+                onChange(it, index, score, time)
             }
         }
 
@@ -160,7 +151,7 @@ class QuizActivity : AppCompatActivity() {
     //indexが１０を超えた時最終画面へ遷移
     fun resultChange (view: View?, score: Int, time: Long) {
 
-        val intent = Intent(this, ResultActivity::class.java)
+        val intent = Intent(this, Result::class.java)
         intent.putExtra("RESULT_SCORE", score.toString())
         intent.putExtra("RESULT_TIME", time.toString())
         startActivity(intent)
